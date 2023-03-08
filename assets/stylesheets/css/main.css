@@ -1,9 +1,10 @@
 body {
-  background: #89e;
+  background: #84e;
 }
 
 h1 {
   -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
   font-size: 48px;
+  line-height: 150%;
 }

@@ -15,4 +15,9 @@ function compilaSass() {
     .pipe(gulp.dest('assets/stylesheets/css/'))
 }
 
+function watch() {
+    gulp.watch('assets/stylesheets/sass/**.scss', compilaSass);
+}
+
 gulp.task('sass', compilaSass);
+gulp.task('default', watch);
