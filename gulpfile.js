@@ -44,9 +44,11 @@ function pluginsJs() {
     return gulp
     .src([
         'node_modules/jquery/dist/jquery.min.js',
-        'node_modules/moment/min/moment.min.js'
+        'node_modules/moment/min/moment.min.js',
+        'node_modules/moment/locale/pt-br.js'
     ])
     .pipe(concat('plugins.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('assets/js/'))
     .pipe(browserSync.stream())
 }
