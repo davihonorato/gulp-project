@@ -11,6 +11,10 @@
   "browserslist": [
     "last 2 versions"
   ],
+  "dependencies": {
+    "jquery": "^3.6.4",
+    "moment": "^2.29.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",

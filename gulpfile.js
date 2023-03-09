@@ -40,6 +40,19 @@ function gulpJs() {
 
 gulp.task('mainJs', gulpJs);
 
+function pluginsJs() {
+    return gulp
+    .src([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/moment/min/moment.min.js'
+    ])
+    .pipe(concat('plugins.js'))
+    .pipe(gulp.dest('assets/js/'))
+    .pipe(browserSync.stream())
+}
+
+gulp.task('pluginsJs', pluginsJs)
+
 // Função e task do browserSync - Server estático
 function browser() {
     browserSync.init({
@@ -61,4 +74,4 @@ function watch() {
 gulp.task('watch', watch);
 
 // Task padrão do gulp para executar, paralelamente, as tasks 'watch' e 'browser-sync'
-gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'mainJs'))
+gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'mainJs', 'pluginsJs'))
