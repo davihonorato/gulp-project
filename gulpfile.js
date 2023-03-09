@@ -31,6 +31,7 @@ function gulpJs() {
         presets: ['@babel/env']
     }))
     .pipe(gulp.dest('assets/js/'))
+    .pipe(browserSync.stream())
 }
 
 gulp.task('mainJs', gulpJs);
@@ -49,7 +50,7 @@ gulp.task('browser-sync', browser);
 // Função e task para verificar alterações nos arquivos .sass e .html
 function watch() {
     gulp.watch('assets/stylesheets/sass/*.scss', compilaSass);
-    gulp.watch('assets/js/scripts/*.js', gulpJs).on('change', browserSync.reload);
+    gulp.watch('assets/js/scripts/*.js', gulpJs);
     gulp.watch('*.html').on('change', browserSync.reload);
 }
 
