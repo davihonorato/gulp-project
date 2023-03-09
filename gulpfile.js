@@ -4,6 +4,7 @@ const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
+const babel = require('gulp-babel');
 
 // Função e task para compilar o Sass já com os prefixos
 function compilaSass() {
@@ -26,6 +27,9 @@ function gulpJs() {
     return gulp
     .src('assets/js/scripts/*.js')
     .pipe(concat('main.js'))
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
     .pipe(gulp.dest('assets/js/'))
 }
 
