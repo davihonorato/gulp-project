@@ -11,7 +11,9 @@ const uglify = require('gulp-uglify');
 function compilaSass() {
     return gulp
     .src('assets/stylesheets/sass/*.scss')
-    .pipe(sass())
+    .pipe(sass({
+        outputStyle: 'compressed'
+    }))
     .pipe(
         autoprefixer({
             cascade: false
